@@ -1,22 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {Component} from 'react';
 
-function Helloworld(props) {
-    return(
-        <div>
-            {props.mytext}
-    </div>
-    )
+import tasks from './sample/tasks.json'
+
+import Tasks from './Components/Tasks.js'
+
+class App extends Component {
+
+    state = {
+        tasks: tasks
+    }
+    render() {
+        return <div>
+        <Tasks tasks={this.state.tasks}/>    
+        </div>
+    }
 }
 
 
-
-function App() {
-  return (
-    <div>
-        Este es un componente: <Helloworld mytext='Hola a todos'/>
-    </div>
-  );
-}
 
 export default App;
